@@ -1,0 +1,36 @@
+*{
+  border: 1px;
+  padding: 0;
+  margin: 0;
+}
+.container{
+  width: 1280px;
+  height: 800px;
+  display: flex;
+  border: solid;
+}
+
+.container>:nth-child(1){
+  width: 1080px;
+  height: 800px;
+  border: solid;
+}
+.container>:nth-child(2){
+  width: 200px;
+  height: 800px;
+  border: solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.container>:nth-child(2)>:nth-child(1){
+  width: 200px;
+  height: 700px;
+  border: solid;
+}
+
+.container>:nth-child(2)>:nth-child(2){
+  width: 200px;
+  height: 100px;
+  border: solid;
+}
