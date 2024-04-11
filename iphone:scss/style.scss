@@ -1,0 +1,223 @@
+:root{
+  --bg1 : black;
+  --bg2 : rgb(20, 18, 18);
+  --bg3 : #1d1d1e;
+  --fontColor1 : white;
+  --fontColor2 :rgb(53, 125, 220);
+  --fontColor3 : rgb(152, 150, 150);
+  --buttonMargin : 0 1vw 0 1vw;
+  --listMargin : 0 2vw 0 2vw;
+  --buttonColor : rgb(27, 95, 221);
+  --fontWeight : 300px;
+  --buttonColor2: rgb(171, 171, 171);  
+}
+@mixin flexCol{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+@mixin flexRow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+@mixin headerFont{
+  font-size: 3vw;
+  color: #8f8f9a;
+  display:inline-block;
+}
+@mixin s1buttonShape{
+  border-radius: 5vw;
+  width: 10vw;
+  margin-top: 10vh;
+}
+
+@mixin s2buttonShape{
+  background-color: rgb(171, 171, 171);  
+  border-radius: 3vw;
+  width: 15vw;
+  height: 10vh;
+  margin: 2vw;
+}
+// @mixin s2buttonShape{
+  
+// }
+
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 1vw;
+  font-family: "Noto Sans KR", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: white;
+}
+
+.page{
+  width: 100vw;
+  height: 100vh;
+}
+.bg1{
+  background-color: var(--bg1);
+}
+.bg2{
+  background-color: var(--bg2);
+}
+
+/* aside, 상단 국가 선택 */
+
+aside{
+  background-color: var(--fontColor1);
+  >div:nth-child(1){
+    @include flexRow();
+    height: 5vh;
+    padding : 0 10vw 0 10vw;
+    >:nth-child(1),>:nth-child(2){
+      display: inline-block;
+      width: 40vw;
+      color: black;
+    }
+    >:nth-child(3),>:nth-child(4){
+      margin: var(--buttonMargin);
+      >:nth-child(1){
+        width: 5vw;
+        height: 5vh;
+        color: black;
+      }
+    }
+  }
+}
+/* menu wrapper */
+.header>:nth-child(2){
+  height: 5vh;
+  
+
+  >:nth-child(1)>ul{
+    @include flexRow();
+    >li{display: inline-block; margin:var(--listMargin) ;}
+  }
+}
+
+.header>:nth-child(3){
+  height: 15vh;
+  width: 100vw;
+  background-color: var(--bg3);
+  @include flexRow();
+  >p>a{color : var(--fontColor2)}
+}
+
+.header>:nth-child(4){
+  @include flexCol();
+  margin-top : 20vh;
+  >h2{margin-bottom : 5vh}
+}
+
+.header>:nth-child(5){
+  @include flexCol();
+  
+  >button{
+    background-color: var(--buttonColor);
+    @include s1buttonShape();
+  }
+}
+
+main{ 
+  
+  >section:nth-child(1){
+    @include flexCol();    
+    >header{
+
+      width: 70vw;
+      height: 10vh;
+      @include flexRow();
+      justify-content: space-between;
+      >:nth-child(1){@include headerFont();
+      font-weight: var(--fontWeight);}
+      >:nth-child(2){
+        :nth-child(1),:nth-child(2){
+          font-size: 1.5vw;
+          color: var(--fontColor2);
+          margin: 1vh;
+        }
+        
+      }
+    }
+
+    >div:nth-child(2){
+      background-color: black;
+      width: 80vw;
+      height: 50vh;
+      border-radius: 3vw;
+    }
+
+    >div:nth-child(3){
+      
+      @include flexRow();
+      >ul{@include s2buttonShape();
+            @include flexRow(); 
+            >li{
+            display: inline-block;
+            margin: 1vw;
+            }
+          }
+
+      >div{
+        width: 7vw;
+        height: 10vh;
+        border-radius: 50%;
+        background-color: var(--buttonColor2);
+      }
+    }
+  }
+
+  >section:nth-child(2){
+    @include flexCol();    
+    >header{
+      width: 70vw;
+      height: 10vh;
+      text-align: left;
+      align-items: baseline;
+      >h2{
+        @include headerFont();
+      }
+    }
+    >div:nth-child(2){
+      width: 80vw;
+      height: 40vh;
+      background-color: var(--bg3);
+    }
+    >p:nth-child(3){font-size: 1vw;margin-top: 5vh;}
+    >div:nth-child(4){@include flexRow();
+      >ul{@include s2buttonShape();
+        width: 25vw;  
+            @include flexRow(); 
+            >li{
+            display: inline-block;
+            margin: 1vw;
+            }
+          }
+  
+    }
+  }
+
+  >section:nth-child(3){
+    @include flexCol();    
+    >header{
+      width: 70vw;
+      height: 10vh;
+      text-align: left;
+      // margin: ;
+      >h2{
+        @include headerFont();
+      }
+    }
+
+  }
+
+
+
+
+}
